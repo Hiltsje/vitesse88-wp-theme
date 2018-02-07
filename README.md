@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # [HTML5 Blank](http://html5blank.com)
 
 Powerful shell for rapidly deploying your WordPress projects.
@@ -78,3 +79,6 @@ There are a few ways to get involved, submit a Pull Request, or submit a comment
 
 ## Contributors
 Thanks to all the awesome [contributors](https://github.com/html5blank/html5blank/graphs/contributors)!
+=======
+# vitesse88-wp-theme
+>>>>>>> 30aa582d6ef0d27f99a7e93aecbefb152086c5d3
