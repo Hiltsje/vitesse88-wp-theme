@@ -5,9 +5,122 @@
 
 
 // Header container
-.header {}
+.header {
+    background-color: $color_primary-dark;
+
+    .mobile-nav-button {
+        display: inline-block;
+		margin: 24px 0 0 0;
+		margin-left: 32px;
+		padding-top: 15px;
+		// animatie
+		width: 25px;
+		height: 25px;
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+		cursor: pointer;
+		span {
+			display: block;
+			position: absolute;
+			height: 3px;
+			width: 100%;
+			background: $color_white;
+			border-radius: 8px;
+			opacity: 1;
+			-webkit-transition: .2s ease-in-out;
+			-moz-transition: .2s ease-in-out;
+			-o-transition: .2s ease-in-out;
+			transition: .2s ease-in-out;
+			&:nth-child(1) {
+				top: 0;
+			}
+
+			&:nth-child(2) {
+				top: 8px;
+
+			}
+
+			&:nth-child(3) {
+				top: 16px;
+			}
+		}
+		&.open span:nth-child(1) {
+			top: 8px;
+			-webkit-transform: rotate(135deg);
+			-moz-transform: rotate(135deg);
+			-o-transform: rotate(135deg);
+			transform: rotate(135deg);
+		}
+
+		&.open span:nth-child(2) {
+			opacity: 0;
+		}
+
+		&.open span:nth-child(3) {
+			top: 8px;
+			-webkit-transform: rotate(-135deg);
+			-moz-transform: rotate(-135deg);
+			-o-transform: rotate(-135deg);
+			transform: rotate(-135deg);
+		}
+	}
+}
+
+
+.mobile-nav-container {
+    background-color: $color_white;
+    padding: 0 32px;
+    display: none;
+    box-shadow: 0 1px 1px 1px rgba(0,0,0,0.25);
+    &.open {
+        display: block;
+    }
+    @media (min-width: $width-min-col-md) {
+        &.open {
+            display: none;
+        }
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        li {
+            display: block;
+            padding: 16px 0 16px 16px;
+            border-bottom: 1px solid $color_grey-base;
+            &:last-of-type {
+                border-bottom: none;
+            }
+            a {
+                color: #2B2B2B;
+                text-decoration: none;
+                color: $color_black;
+                font-weight: 400;
+                line-height: 24px;
+                &:active {
+                    color: $color_primary-light;
+                    border-bottom: none;
+                }
+
+            }
+            &:before {
+                content: none;
+            }
+
+            &.current-menu-item a {
+                color: $color_primary-light;
+            }
+        }
+    }
+}
 
 // Logo
-.logo {}
+.logo {
+    display: inline;
+}
 
 .logo-img {}
+
+

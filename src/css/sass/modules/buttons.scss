@@ -1,0 +1,35 @@
+.button {
+    border-radius: 8px;
+    padding: 8px 16px;
+    margin: 16px 0;
+    font-weight: 400;
+    font-size: 16px;
+    color: $color-white;
+    border-radius: 8px;
+    padding: 8px 16px;
+    margin: 16px 0;
+
+    &.primary {
+    background: $color_primary-base;
+        &:hover {
+            background-color: $color_primary-light;
+        }
+    } 
+}
+a {
+
+&.link {
+    margin: 16px 0;
+    font-size: 14px;
+    color: $color_white;
+    height: 16px;
+    background-image: url('img/icons/icon-chevron-right.svg');
+    background-size: contain;
+	background-repeat: no-repeat;
+	background-position: right;
+    padding-right: 30px;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

@@ -5,9 +5,15 @@
  */
 
 
-.nav {}
+.nav {
+    display: inline-block;
+}
 
-.menu {}
+.menu {
+    li {
+        display: inline-block;
+    }
+}
 
 .sub-menu {}
 

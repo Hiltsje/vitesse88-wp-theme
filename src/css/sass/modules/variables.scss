@@ -8,16 +8,27 @@
  * Typography
  */
 
-$font-family-base: "Helvetica Neue", Helvetica, Arial, "Open Sans", sans-serif;
-$font-size-base: 140%;
-$line-height-base: 1.5;
+$font-family-base: 'Open Sans', "Helvetica Neue", Helvetica, Arial, "Open Sans", sans-serif;
+$font-size-base: 16px;
+$line-height-base: 1.4;
 
 
 /**
  * Colors
  */
 
-$text-color: #444;
+$color_primary-dark: #002F6C;
+$color_primary-base: #01579B;
+$color_primary-light: #4E83CB;
+
+$color_black: #2B2B2B;
+$color_grey-dark: #9B9B9B;
+$color_grey-base: #D8D8D8;
+$color_grey-light: #EEEEEE;
+$color_white: #ffffff;
+
+
+$text-color: $color_black;
 $body-bg: #fff;
 $selection-bg: #04A4CC;
 
@@ -33,5 +44,15 @@ $padding-horizontal-base: 5px;
 $padding-vertical-base: 5px;
 $margin-horizontal-base: 5px;
 $margin-vertical-base: 5px;
-$margin-horizontal-large: 15px;
-$margin-vertical-large: 15px;
+$margin-horizontal-large: 0;
+$margin-vertical-large: 0;
+
+
+// Media query breaking points
+$width-min-col-xs: 576px;
+$width-max-col-xs: 767px;
+$width-min-col-sm: 768px;
+$width-max-col-sm: 991px;
+$width-min-col-md: 992px;
+$width-max-col-md: 1199px;
+$width-min-col-lg: 1200px;
