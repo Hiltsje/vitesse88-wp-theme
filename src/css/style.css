@@ -160,39 +160,39 @@ a.link {
  * ---
  * Wordpess core classes
  */
-.wysiwyg {
+.wysiwyg-content {
   /**
   * Alignment
   */
   /**
   * Gallery & images
   */ }
-  .wysiwyg .alignnone {
+  .wysiwyg-content .alignnone {
     margin: 5px 0 0 0; }
-  .wysiwyg .aligncenter {
+  .wysiwyg-content .aligncenter {
     display: block;
     margin: 5px auto; }
-  .wysiwyg .alignright {
+  .wysiwyg-content .alignright {
     float: right;
     margin: 5px 0 0 0; }
-  .wysiwyg .alignleft {
+  .wysiwyg-content .alignleft {
     float: left;
     margin: 5px 0 0 0; }
-  .wysiwyg .wp-caption {
+  .wysiwyg-content .wp-caption {
     background: #fff;
     border: thin solid #F0F0F0;
     max-width: 95%;
     padding: 5px 5px;
     text-align: center; }
-    .wysiwyg .wp-caption img {
+    .wysiwyg-content .wp-caption img {
       width: auto;
       max-width: 98.5%;
       height: auto;
       border: 0 none;
       padding: 0;
       margin: 0; }
-  .wysiwyg .wp-caption .wp-caption-text,
-  .wysiwyg .gallery-caption {
+  .wysiwyg-content .wp-caption .wp-caption-text,
+  .wysiwyg-content .gallery-caption {
     margin: 0;
     padding: 0 5px 5px;
     font-size: 16px;
@@ -391,5 +391,9 @@ a.link {
   h2,
   h3 {
     page-break-after: avoid; } }
+
+.default-page .title-wrapper {
+  background-color: #01579B;
+  margin: 0 0 32px 0; }
 
 /*# sourceMappingURL=style.css.map */
