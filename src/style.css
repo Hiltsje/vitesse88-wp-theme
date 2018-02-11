@@ -101,7 +101,8 @@ input[type="search"] {
 }
 */
 html {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, "Open Sans", sans-serif; }
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, "Open Sans", sans-serif;
+  -webkit-font-smoothing: antialiased; }
 
 h1 {
   font-family: Lato;
@@ -138,11 +139,27 @@ a {
   color: #ffffff;
   border-radius: 8px;
   padding: 8px 16px;
-  margin: 16px 0; }
+  margin: 16px 0;
+  border: none; }
   .button.primary {
     background: #01579B; }
     .button.primary:hover {
       background-color: #4E83CB; }
+  .button.small {
+    font-size: 14px;
+    padding: 4px 32px; }
+    .button.small.phone {
+      background-image: url("img/icons/icon-phone.svg");
+      background-size: 14px 14px;
+      background-repeat: no-repeat;
+      background-position: 24px;
+      padding-left: 48px; }
+    .button.small.mail {
+      background-image: url("img/icons/icon-mail.svg");
+      background-size: 16px 16px;
+      background-repeat: no-repeat;
+      background-position: 16px;
+      padding-left: 40px; }
 
 a.link {
   margin: 16px 0;
@@ -325,6 +342,18 @@ a.link {
  * partials/footer
  * ---
  */
+.footer {
+  background-color: #002F6C;
+  padding: 16px; }
+  .footer h4 {
+    color: #ffffff;
+    font-weight: 700; }
+  .footer p {
+    font-size: 14px;
+    color: #ffffff; }
+  .footer .button {
+    display: block; }
+
 /**
  * partials/print
  * ---

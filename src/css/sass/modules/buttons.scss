@@ -8,16 +8,34 @@
     border-radius: 8px;
     padding: 8px 16px;
     margin: 16px 0;
+    border: none;
 
     &.primary {
     background: $color_primary-base;
         &:hover {
             background-color: $color_primary-light;
         }
-    } 
+    }
+    &.small {
+        font-size: 14px;
+        padding: 4px 32px;
+        &.phone {
+            background-image: url('img/icons/icon-phone.svg');
+            background-size: 14px 14px;
+            background-repeat: no-repeat;
+            background-position: 24px;
+            padding-left: 48px;
+        }
+        &.mail {
+            background-image: url('img/icons/icon-mail.svg');
+            background-size: 16px 16px;
+            background-repeat: no-repeat;
+            background-position: 16px;
+            padding-left: 40px;
+        }
+    }
 }
 a {
-
 &.link {
     margin: 16px 0;
     font-size: 14px;

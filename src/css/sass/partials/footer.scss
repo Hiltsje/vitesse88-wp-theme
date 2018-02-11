@@ -4,4 +4,20 @@
  */
 
 
-.footer {}
+.footer {
+    background-color: $color_primary-dark;
+    padding: 16px;
+
+    h4 {
+        color: $color_white;
+        font-weight: 700;
+    }
+    p {
+        font-size: 14px;
+        color: $color_white;;
+    }
+
+    .button {
+        display: block;
+    }
+}

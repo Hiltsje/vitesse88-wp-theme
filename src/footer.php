@@ -1,12 +1,16 @@
 			<!-- footer -->
 			<footer class="footer" role="contentinfo">
 
-				<!-- copyright -->
-				<p class="copyright">
-					&copy; <?php echo esc_html( date( 'Y' ) ); ?> Copyright <?php bloginfo( 'name' ); ?>. <?php esc_html_e( 'Powered by', 'html5blank' ); ?>
-					<a href="//wordpress.org" target="_blank">WordPress</a> &amp; <a href="//html5blank.com" target="_blank">HTML5 Blank</a>.
-				</p>
-				<!-- /copyright -->
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<h4>Contact</h4>
+						<p>P.V. Vitesse '88 bakkeveen</p>
+						<a href="tel:+31624421662" class="button primary phone small">0516 541068</a>
+						<a href="mailto:info@vitesse88.nl"class="button primary mail small">info@vitesse88.nl</a>
+					</div>
+				</div>
+			</div>
 
 			</footer>
 			<!-- /footer -->
