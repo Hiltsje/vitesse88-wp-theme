@@ -408,3 +408,40 @@ a.link {
 .default-page .title-wrapper {
   background-color: #01579B;
   margin: 0 0 32px 0; }
+  .default-page .title-wrapper h1 {
+    margin: 24px 0; }
+
+.default-single .title-wrapper {
+  background-color: #01579B;
+  margin: 0 0 16px 0; }
+  .default-single .title-wrapper span {
+    display: block;
+    margin: 24px 0;
+    font-family: Lato;
+    font-weight: 400;
+    font-size: 24px;
+    color: #ffffff;
+    line-height: 0.6;
+    height: 16px;
+    background-image: url("img/icons/icon-chevron-left.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left: 30px; }
+
+.default-single h1 {
+  font-family: Lato;
+  font-weight: 700;
+  font-size: 24px;
+  color: #2B2B2B; }
+
+.default-single .date {
+  display: block;
+  font-size: 14px;
+  margin: 0 0 40px 0; }
+  .default-single .date img {
+    padding: 0 8px 0 1px; }
+
+hr {
+  /* Line 2 Copy: */
+  border: 1px solid #EEEEEE; }

@@ -2,5 +2,8 @@
     .title-wrapper {
         background-color: $color_primary-base;
         margin: 0 0 32px 0;
+        h1 {
+            margin: 24px 0;
+        }
     }
 }

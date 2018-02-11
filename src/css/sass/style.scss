@@ -22,3 +22,9 @@
 @import "partials/footer";
 @import "partials/print";
 @import "partials/default-page.scss";
+@import "partials/default-single.scss";
+
+hr {
+    /* Line 2 Copy: */
+        border: 1px solid $color_grey-light;
+}
