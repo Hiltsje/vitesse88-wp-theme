@@ -16,10 +16,14 @@
 						<!-- section -->
 						<section>
 
-							<?php $args = array(
+							<?php 
+							$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+							$args = array(
 							'order'    => 'DESC',
 							'post_type' => 'post',
-							'post_status' => 'publish'
+							'post_status' => 'publish',
+							'posts_per_page' => 10,
+  							'paged'          => $paged
 						);
 						query_posts( $args ); ?>
 
