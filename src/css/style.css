@@ -429,6 +429,49 @@ a.link {
   .default-single .date img {
     padding: 0 8px 0 1px; }
 
+.news-page .title-wrapper {
+  background-color: #01579B;
+  margin: 0 0 16px 0; }
+  .news-page .title-wrapper span {
+    display: block;
+    margin: 24px 0;
+    font-family: Lato;
+    font-weight: 400;
+    font-size: 24px;
+    color: #ffffff;
+    line-height: 0.6;
+    height: 16px;
+    background-image: url("img/icons/icon-chevron-left.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left: 30px; }
+
+.news-page article a {
+  background-image: url("img/icons/icon-chevron-right.svg");
+  background-size: 8px;
+  background-repeat: no-repeat;
+  background-position: 95%;
+  display: block;
+  padding: 8px 40px 8px 0; }
+  .news-page article a h2 {
+    font-weight: 400;
+    font-size: 16px;
+    color: #2B2B2B; }
+  .news-page article a .date {
+    display: block;
+    font-size: 14px;
+    color: #9B9B9B; }
+    .news-page article a .date img {
+      padding: 0 8px 0 1px; }
+
+.news-page .pagination {
+  display: block;
+  margin: 32px 0;
+  text-align: center; }
+  .news-page .pagination .page-numbers {
+    padding: 0 8px; }
+
 hr {
   /* Line 2 Copy: */
   border: 1px solid #EEEEEE; }
