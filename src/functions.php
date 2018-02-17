@@ -440,11 +440,36 @@ function add_custom_taxonomies() {
       ),
       // Control the slugs used for this taxonomy
       'rewrite' => array(
-        'slug' => 'vlucht typen', // This controls the base slug that will display before each term
+        'slug' => 'vlucht_typen', // This controls the base slug that will display before each term
         'with_front' => false, // Don't display the category base before "/locations/"
         'hierarchical' => true // This will allow URL's like "/locations/boston/cambridge/"
       ),
     ));
+
+    register_taxonomy('losplaatsen', 'uitslagen', array(
+        // Hierarchical taxonomy (like categories)
+        'hierarchical' => true,
+        // This array of options controls the labels displayed in the WordPress Admin UI
+        'labels' => array(
+          'name' => _x( 'Losplaatsen', 'taxonomy general name' ),
+          'singular_name' => _x( 'Losplaats', 'taxonomy singular name' ),
+          'search_items' =>  __( 'Search losplaatsen' ),
+          'all_items' => __( 'All losplaatsen' ),
+          'parent_item' => __( 'Parent losplaats' ),
+          'parent_item_colon' => __( 'Parent losplaats:' ),
+          'edit_item' => __( 'Edit losplaats' ),
+          'update_item' => __( 'Update losplaats' ),
+          'add_new_item' => __( 'Add losplaats' ),
+          'new_item_name' => __( 'New losplaats' ),
+          'menu_name' => __( 'Losplaatsen' ),
+        ),
+        // Control the slugs used for this taxonomy
+        'rewrite' => array(
+          'slug' => 'losplaatsen', // This controls the base slug that will display before each term
+          'with_front' => false, // Don't display the category base before "/locations/"
+          'hierarchical' => true // This will allow URL's like "/locations/boston/cambridge/"
+        ),
+      ));
   }
   add_action( 'init', 'add_custom_taxonomies', 0 );
 
@@ -454,6 +479,7 @@ function create_post_type_html5() {
     register_taxonomy_for_object_type( 'category', 'uitslagen' ); // Register Taxonomies for Category
     register_taxonomy_for_object_type( 'post_tag', 'uitslagen' );
     register_taxonomy_for_object_type( 'vlucht_type', 'uitslagen' );
+    register_taxonomy_for_object_type( 'losplaatsen', 'uitslagen' );
     register_post_type( 'uitslagen', // Register Custom Post Type
         array(
         'labels'       => array(
@@ -471,6 +497,8 @@ function create_post_type_html5() {
             'not_found_in_trash' => esc_html( 'No uitslag found in Trash', 'html5blank' ),
         ),
         'public'       => true,
+        'publicly_queryable' => true,
+        'query_var'          => true,
         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
         'has_archive'  => true,
         'supports'     => array(
@@ -483,7 +511,8 @@ function create_post_type_html5() {
         'taxonomies'   => array(
             'post_tag',
             'category',
-            'vlucht_type'
+            'vlucht_type',
+            'losplaatsen'
         ) // Add Category and Post Tags support
     ) );
 }
@@ -515,12 +544,15 @@ function change_title($post_id) {
     if($postType == 'uitslagen') { 
         
     $losDatum = get_field('losdatum',$post_id);
-    $lossDatumFormatted = date('d-m-Y', strtotime($losDatum));
-    $locatie = get_field('locatie',$post_id);
+    $losDatumFormatted = date('d-m-Y', strtotime($losDatum));
+   
+    $losplaatsId = get_field('losplaats',$post_id);
+    $losplaats = get_term( $losplaatsId, 'losplaatsen' )->name;
 
     $vluchtTypeId = get_field('vlucht_type',$post_id);
     $vluchtType = get_term( $vluchtTypeId, 'vlucht_type' )->name;
-    $post_title =  $lossDatumFormatted  . ' ' . $locatie . ' ' . $vluchtType ;
+   
+    $post_title =  $losDatumFormatted  . ' ' . $losplaats . ' ' . $vluchtType ;
        
     // remove title input field from uitslag edit/create page
         add_action('admin_head', function()
