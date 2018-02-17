@@ -503,3 +503,46 @@ function html5_shortcode_demo_2( $atts, $content = null ) {
 }
 
 
+/*------------------------------------*\
+    Additional Functions
+\*------------------------------------*/
+
+// save posts of type uitslagen with automatic title
+add_action('save_post', 'change_title');
+
+function change_title($post_id) {
+    $postType = get_post_type( $post_id);
+    if($postType == 'uitslagen') { 
+        
+    $losDatum = get_field('losdatum',$post_id);
+    $lossDatumFormatted = date('d-m-Y', strtotime($losDatum));
+    $locatie = get_field('locatie',$post_id);
+
+    $vluchtTypeId = get_field('vlucht_type',$post_id);
+    $vluchtType = get_term( $vluchtTypeId, 'vlucht_type' )->name;
+    $post_title =  $lossDatumFormatted  . ' ' . $locatie . ' ' . $vluchtType ;
+       
+    // remove title input field from uitslag edit/create page
+        add_action('admin_head', function()
+    {
+        ?>
+        <style>
+        #titlediv {
+            display: none;
+        }
+        </style>
+        <?php
+    });
+
+    // unhook this function so it doesn't loop infinitely
+    remove_action('save_post', 'change_title');
+    
+    // update the post, which calls save_post again
+    wp_update_post(array('ID' => $post_id, 'post_title' => $post_title));
+
+    // re-hook this function
+    add_action('save_post', 'change_title');
+    
+    }
+}  
+
