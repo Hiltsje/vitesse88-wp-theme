@@ -413,25 +413,62 @@ add_shortcode( 'html5_shortcode_demo_2', 'html5_shortcode_demo_2' ); // Place [h
     Custom Post Types
 \*------------------------------------*/
 
+/**
+ * Add custom taxonomies
+ *
+ * Additional custom taxonomies can be defined here
+ * http://codex.wordpress.org/Function_Reference/register_taxonomy
+ */
+function add_custom_taxonomies() {
+    // Add new "Locations" taxonomy to Posts
+    register_taxonomy('vlucht_type', 'uitslagen', array(
+      // Hierarchical taxonomy (like categories)
+      'hierarchical' => true,
+      // This array of options controls the labels displayed in the WordPress Admin UI
+      'labels' => array(
+        'name' => _x( 'Vlucht typen', 'taxonomy general name' ),
+        'singular_name' => _x( 'Vlucht type', 'taxonomy singular name' ),
+        'search_items' =>  __( 'Search vlucht type' ),
+        'all_items' => __( 'All vlucht typen' ),
+        'parent_item' => __( 'Parent vlucht type' ),
+        'parent_item_colon' => __( 'Parent vlucht type:' ),
+        'edit_item' => __( 'Edit vlucht type' ),
+        'update_item' => __( 'Update vlucht typen' ),
+        'add_new_item' => __( 'Add vlucht type' ),
+        'new_item_name' => __( 'New vlucht type' ),
+        'menu_name' => __( 'Vlucht typen' ),
+      ),
+      // Control the slugs used for this taxonomy
+      'rewrite' => array(
+        'slug' => 'vlucht typen', // This controls the base slug that will display before each term
+        'with_front' => false, // Don't display the category base before "/locations/"
+        'hierarchical' => true // This will allow URL's like "/locations/boston/cambridge/"
+      ),
+    ));
+  }
+  add_action( 'init', 'add_custom_taxonomies', 0 );
+
+
 // Create 1 Custom Post type for a Demo, called HTML5-Blank
 function create_post_type_html5() {
-    register_taxonomy_for_object_type( 'category', 'html5-blank' ); // Register Taxonomies for Category
-    register_taxonomy_for_object_type( 'post_tag', 'html5-blank' );
-    register_post_type( 'html5-blank', // Register Custom Post Type
+    register_taxonomy_for_object_type( 'category', 'uitslagen' ); // Register Taxonomies for Category
+    register_taxonomy_for_object_type( 'post_tag', 'uitslagen' );
+    register_taxonomy_for_object_type( 'vlucht_type', 'uitslagen' );
+    register_post_type( 'uitslagen', // Register Custom Post Type
         array(
         'labels'       => array(
-            'name'               => esc_html( 'HTML5 Blank Custom Post', 'html5blank' ), // Rename these to suit
-            'singular_name'      => esc_html( 'HTML5 Blank Custom Post', 'html5blank' ),
+            'name'               => esc_html( 'Uitslagen', 'html5blank' ), // Rename these to suit
+            'singular_name'      => esc_html( 'Uitslag', 'html5blank' ),
             'add_new'            => esc_html( 'Add New', 'html5blank' ),
-            'add_new_item'       => esc_html( 'Add New HTML5 Blank Custom Post', 'html5blank' ),
+            'add_new_item'       => esc_html( 'Add New uitslag', 'html5blank' ),
             'edit'               => esc_html( 'Edit', 'html5blank' ),
-            'edit_item'          => esc_html( 'Edit HTML5 Blank Custom Post', 'html5blank' ),
-            'new_item'           => esc_html( 'New HTML5 Blank Custom Post', 'html5blank' ),
-            'view'               => esc_html( 'View HTML5 Blank Custom Post', 'html5blank' ),
-            'view_item'          => esc_html( 'View HTML5 Blank Custom Post', 'html5blank' ),
-            'search_items'       => esc_html( 'Search HTML5 Blank Custom Post', 'html5blank' ),
-            'not_found'          => esc_html( 'No HTML5 Blank Custom Posts found', 'html5blank' ),
-            'not_found_in_trash' => esc_html( 'No HTML5 Blank Custom Posts found in Trash', 'html5blank' ),
+            'edit_item'          => esc_html( 'Edit uitslag', 'html5blank' ),
+            'new_item'           => esc_html( 'New uitslag', 'html5blank' ),
+            'view'               => esc_html( 'View uitslagen', 'html5blank' ),
+            'view_item'          => esc_html( 'View uitslag', 'html5blank' ),
+            'search_items'       => esc_html( 'Search uitslagen', 'html5blank' ),
+            'not_found'          => esc_html( 'No uitslag found', 'html5blank' ),
+            'not_found_in_trash' => esc_html( 'No uitslag found in Trash', 'html5blank' ),
         ),
         'public'       => true,
         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
@@ -445,7 +482,8 @@ function create_post_type_html5() {
         'can_export'   => true, // Allows export in Tools > Export
         'taxonomies'   => array(
             'post_tag',
-            'category'
+            'category',
+            'vlucht_type'
         ) // Add Category and Post Tags support
     ) );
 }
@@ -463,3 +501,5 @@ function html5_shortcode_demo( $atts, $content = null ) {
 function html5_shortcode_demo_2( $atts, $content = null ) {
     return '<h2>' . $content . '</h2>';
 }
+
+

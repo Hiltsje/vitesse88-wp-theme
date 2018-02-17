@@ -30,7 +30,6 @@
 							<?php get_template_part( 'loop-news' ); ?>
 							
 							<?php get_template_part( 'pagination' ); ?>
-							//paginering fixen
 						</section>
 						<!-- /section -->
 					</main>
