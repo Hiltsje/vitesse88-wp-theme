@@ -421,7 +421,7 @@ add_shortcode( 'html5_shortcode_demo_2', 'html5_shortcode_demo_2' ); // Place [h
  */
 function add_custom_taxonomies() {
     // Add new "Locations" taxonomy to Posts
-    register_taxonomy('vlucht_type', 'uitslagen', array(
+    register_taxonomy('vlucht_typen', 'uitslagen', array(
       // Hierarchical taxonomy (like categories)
       'hierarchical' => true,
       // This array of options controls the labels displayed in the WordPress Admin UI
@@ -511,7 +511,7 @@ function create_post_type_html5() {
         'taxonomies'   => array(
             'post_tag',
             'category',
-            'vlucht_type',
+            'vlucht_typen',
             'losplaatsen'
         ) // Add Category and Post Tags support
     ) );
@@ -537,7 +537,7 @@ function html5_shortcode_demo_2( $atts, $content = null ) {
 \*------------------------------------*/
 
 // save posts of type uitslagen with automatic title
-add_action('save_post', 'change_title');
+/* add_action('save_post', 'change_title');
 
 function change_title($post_id) {
     $postType = get_post_type( $post_id);
@@ -577,4 +577,5 @@ function change_title($post_id) {
     
     }
 }  
+*/
 

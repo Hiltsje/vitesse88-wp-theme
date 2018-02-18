@@ -1,0 +1,83 @@
+.uitslagen-archive-page {
+    .title-wrapper {
+        background-color: $color_primary-base;
+        margin: 0 0 0 0;
+        span {
+            display: block;
+            margin: 24px 0;
+            font-family: Lato;
+            font-weight: 400;
+            font-size: 24px;
+            color: $color_white;
+            line-height: 0.6;
+
+            height: 16px;
+            background-image: url('img/icons/icon-chevron-left.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: left;
+            padding-left: 30px;
+        }
+    }
+    .form-wrapper {
+        background-color: $color_grey-light;
+        margin: 0 0 32px 0; 
+        padding: 24px 0;
+        form {
+            select {
+                width: 100%;
+            }
+        }
+    }
+    .uitslag-vlucht-type  {
+        padding: 48px 0 16px 0;
+        font-weight: 700;
+        font-size: 24px;
+        color: $color_black;
+        &:first-of-type {
+            padding-top: 0;
+        }
+        }
+    article {
+        a {
+            background-image: url('img/icons/icon-chevron-right.svg');
+            background-size: 8px;
+            background-repeat: no-repeat;
+            background-position: 95%;
+            display: block;
+            padding: 8px 40px 8px 0;
+            border-bottom: 1px solid $color_grey-light;  
+            text-decoration: none;  
+            h2 {
+                font-size: 16px;
+                color: $color_black;
+                font-weight: 400;
+                &:hover {
+                    color: $color_primary-light;
+                }
+            }
+
+            .date {
+                display: block;
+                font-size: 14px;
+                color:$color_grey-dark;
+                img {
+                    padding: 0 8px 0 1px;
+                }
+            }  
+        }
+        .uitslagen-empty {
+            color: $color_grey-base;
+
+        }
+    }
+    .pagination {
+        display: block;
+        margin: 32px 0;
+        text-align: center;
+        .page-numbers {
+            padding: 0 8px;
+            
+        }
+    }
+}
