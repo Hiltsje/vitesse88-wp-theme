@@ -442,6 +442,45 @@ a.link {
   .default-single .date img {
     padding: 0 8px 0 1px; }
 
+.single-uitslagen .title-wrapper {
+  background-color: #01579B;
+  margin: 0 0 16px 0; }
+  .single-uitslagen .title-wrapper span {
+    display: block;
+    margin: 24px 0;
+    font-family: Lato;
+    font-weight: 400;
+    font-size: 24px;
+    color: #ffffff;
+    line-height: 0.6;
+    height: 16px;
+    background-image: url("img/icons/icon-chevron-left.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left: 30px; }
+
+.single-uitslagen h1 {
+  font-family: Lato;
+  font-weight: 700;
+  font-size: 24px;
+  color: #2B2B2B; }
+
+.single-uitslagen .date {
+  display: block;
+  font-size: 14px;
+  margin: 0 0 40px 0; }
+  .single-uitslagen .date img {
+    padding: 0 8px 0 1px; }
+
+.single-uitslagen .uitslagen-vlucht-type-tag {
+  float: right;
+  font-size: 12px;
+  color: #002F6C;
+  border: 1px solid #002F6C;
+  border-radius: 20px;
+  padding: 2px 16px; }
+
 .news-page .title-wrapper {
   background-color: #01579B;
   margin: 0 0 16px 0; }
