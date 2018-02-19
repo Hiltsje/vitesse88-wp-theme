@@ -20,7 +20,7 @@
 
 	
 	<!-- <?php edit_post_link(); ?> -->
-<hr>
+
 	</article>
 	<!-- /article -->
 

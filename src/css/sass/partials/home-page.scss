@@ -1,0 +1,108 @@
+.home-page {
+    .header-wrapper {
+        background-image: url('img/header.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 80px;
+        width: 100%;
+    }
+
+    .uitslagen-block {
+        padding: 32px 0 32px 0;
+
+        article {
+            border-bottom: 1px solid $color_grey-light;
+            &:last-of-type {
+                margin: 0 0 40px 0;
+            }
+
+            a {
+                background-image: url('img/icons/icon-chevron-right.svg');
+                background-size: 8px;
+                background-repeat: no-repeat;
+                background-position: 95%;
+                display: block;
+                padding: 8px 40px 8px 0;
+                text-decoration: none;
+                  
+                text-decoration: none;  
+                h2 {
+                    font-size: 16px;
+                    color: $color_black;
+                    font-weight: 400;
+                    &:hover {
+                        color: $color_primary-light;
+                    }
+                }
+    
+                .date {
+                    display: block;
+                    font-size: 14px;
+                    color:$color_grey-dark;
+                    img {
+                        padding: 0 8px 0 1px;
+                    }
+                }  
+            }
+        }
+    }
+    .agenda-block {
+        padding: 32px 0 32px 0;
+        background-color: $color_primary-base;
+        color: $color_white;
+    }
+
+    .news-block {
+        padding: 32px 0 32px 0;
+        article {
+            border-bottom: 1px solid $color_grey-light; 
+            &:last-of-type {
+                margin: 0 0 40px 0;
+            }
+            a {
+                background-image: url('img/icons/icon-chevron-right.svg');
+                background-size: 8px;
+                background-repeat: no-repeat;
+                background-position: 95%;
+                display: block;
+                padding: 8px 40px 8px 0;
+                text-decoration: none;
+            
+                h2 {
+                font-weight: 400;
+                font-size: 16px;
+                color: $color_black;
+                    &:hover {
+                        color: $color_primary-light;
+                    }
+                }
+    
+                .date {
+                    display: block;
+                    font-size: 14px;
+                    color:$color_grey-dark;
+                    img {
+                        padding: 0 8px 0 1px;
+                    }
+                }  
+            }
+        }
+    }
+
+    .duivenhouden-block {
+        padding: 0 0 64px 0;
+        background-color: $color_grey-light;
+        .block-header-wrapper {
+            margin: 0 0 32px 0;
+            background-image: url('img/duivenhouden.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+        }
+        p {
+           padding: 0 0 16px 0;
+        }
+    }
+}

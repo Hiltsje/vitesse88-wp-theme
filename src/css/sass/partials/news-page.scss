@@ -20,6 +20,7 @@
         }
     }
     article {
+        border-bottom: 1px solid $color_grey-light;
         a {
             background-image: url('img/icons/icon-chevron-right.svg');
             background-size: 8px;
