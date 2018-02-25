@@ -67,7 +67,7 @@ if ( function_exists( 'add_theme_support' ) ) {
 function html5blank_nav() {
     wp_nav_menu(
     array(
-        'theme_location'  => 'header-menu',
+        'theme_location'  => 'mobile-menu',
         'menu'            => '',
         'container'       => 'div',
         'container_class' => 'menu-{menu slug}-container',
@@ -86,6 +86,55 @@ function html5blank_nav() {
         )
     );
 }
+
+// HTML5 Blank navigation
+function html5blank_desktop_nav() {
+    wp_nav_menu(
+    array(
+        'theme_location'  => 'desktop-menu',
+        'menu'            => '',
+        'container'       => 'div',
+        'container_class' => 'menu-{menu slug}-container',
+        'container_id'    => '',
+        'menu_class'      => 'menu',
+        'menu_id'         => '',
+        'echo'            => true,
+        'fallback_cb'     => 'wp_page_menu',
+        'before'          => '',
+        'after'           => '',
+        'link_before'     => '',
+        'link_after'      => '',
+        'items_wrap'      => '<ul>%3$s</ul>',
+        'depth'           => 0,
+        'walker'          => '',
+        )
+    );
+}
+
+// HTML5 Blank navigation
+function html5blank_footer_nav() {
+    wp_nav_menu(
+    array(
+        'theme_location'  => 'footer-menu',
+        'menu'            => '',
+        'container'       => 'div',
+        'container_class' => 'menu-{menu slug}-container',
+        'container_id'    => '',
+        'menu_class'      => 'menu',
+        'menu_id'         => '',
+        'echo'            => true,
+        'fallback_cb'     => 'wp_page_menu',
+        'before'          => '',
+        'after'           => '',
+        'link_before'     => '',
+        'link_after'      => '',
+        'items_wrap'      => '<ul>%3$s</ul>',
+        'depth'           => 0,
+        'walker'          => '',
+        )
+    );
+}
+
 
 // Load HTML5 Blank scripts (header.php)
 function html5blank_header_scripts() {
@@ -156,7 +205,9 @@ function html5blank_styles() {
 // Register HTML5 Blank Navigation
 function register_html5_menu() {
     register_nav_menus( array( // Using array to specify more menus if needed
-        'header-menu'  => esc_html( 'Header Menu', 'html5blank' ), // Main Navigation
+        'mobile-menu'  => esc_html( 'Mobile Menu', 'html5blank' ), // Main Navigation
+        'desktop-menu'  => esc_html( 'Desktop Menu', 'html5blank' ), // Main Navigation
+        'footer-menu'  => esc_html( 'Footer Menu', 'html5blank' ), // Main Navigation
         'extra-menu'   => esc_html( 'Extra Menu', 'html5blank' ) // Extra Navigation if needed (duplicate as many as you need!)
     ) );
 }
