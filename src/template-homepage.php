@@ -131,20 +131,25 @@
 				
 				<div class="order-5 order-sm-5 col-sm-12 col-xs-12">
 					
-					<div class="homepage-block duivenhouden-block">
-					<div class="block-header-wrapper"></div>	
-							<h2>Postduiven houden</h2>
-							<p>Heb je interesse hebt in postduiven of de duivensport en wil je meer weten? We vertellen er graag meer over!</p>
-							<a href="/de-duivensport/" class="button primary">meer leren over de duivensport</a>
+						<div class="homepage-block duivenhouden-block">
+							<div class="row no-gutter">	
+								<div class="col-xs-12 col-sm-6">
+									<div class="block-header-wrapper"></div>	
+								</div>
+								<div class="col-xs-12 col-sm-6">
+									<h2>Postduiven houden</h2>
+									<p>Heb je interesse hebt in postduiven of de duivensport en wil je meer weten? We vertellen er graag meer over!</p>
+									<a href="/de-duivensport/" class="button primary">meer leren over de duivensport</a>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		
 	</section>
 		<!-- /section -->
 					
 </main>
-</div>
 
 <?php get_footer(); ?>

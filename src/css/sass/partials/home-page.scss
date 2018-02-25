@@ -103,16 +103,17 @@
     .duivenhouden-block {
         padding: 32px 0 64px 0;
         background-color: $color_grey-light;
+        @media (min-width: $width-min-col-xs) {
+            padding: 32px 0 32px 0;
+    }
         .block-header-wrapper {
-            margin: 0 0 32px 0;
+            margin: 0 0 0 0;
             background-image: url('img/duivenhouden.jpg');
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
             height: 200px;
-            @media (min-width: $width-min-col-sm) {
-                    display: none;
-            }
+            
         }
         p {
            padding: 0 0 16px 0;

@@ -3,16 +3,16 @@
  * ---
  */
 
- html {
-   background-color: $color_white;
+body {
+   background-color: $color_grey-light;
+   
  }
 
 .wrapper {
-  // z-index: -10;
   max-width: $wrapper-width;
   padding: 0 $margin-horizontal-large;
   margin: 0 auto;
   position: relative;
   background: $color_white;
-
+  border: 2px solid $color_grey-base;
 }
