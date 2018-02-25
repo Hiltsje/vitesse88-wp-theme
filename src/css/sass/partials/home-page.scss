@@ -1,4 +1,7 @@
 .home-page {
+
+    
+
     .header-wrapper {
         background-image: url('img/header.jpg');
         background-repeat: no-repeat;
@@ -6,6 +9,12 @@
         background-position: center;
         height: 80px;
         width: 100%;
+    }
+
+    .homepage-block {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        height: 100%;
     }
 
     .uitslagen-block {
@@ -48,6 +57,7 @@
         }
     }
     .agenda-block {
+        
         padding: 32px 0 32px 0;
         background-color: $color_primary-base;
         color: $color_white;
@@ -91,7 +101,7 @@
     }
 
     .duivenhouden-block {
-        padding: 0 0 64px 0;
+        padding: 32px 0 64px 0;
         background-color: $color_grey-light;
         .block-header-wrapper {
             margin: 0 0 32px 0;
@@ -100,6 +110,9 @@
             background-size: cover;
             background-position: center;
             height: 200px;
+            @media (min-width: $width-min-col-sm) {
+                    display: none;
+            }
         }
         p {
            padding: 0 0 16px 0;
