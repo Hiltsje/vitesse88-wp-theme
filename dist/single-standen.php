@@ -1,10 +1,10 @@
 <?php get_header(); ?>
-<div class="default-single">
+<div class="single-uitslagen">
 	<div class="title-wrapper">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-offset-1 col-sm-12 col-xs-12">
-					<a href="/"> <span>Nieuws</span></a>
+					<a href="#" class="back-button"> <span>Uitslagen</span></a>
 				</div>
 			</div>
 		</div>
@@ -31,7 +31,18 @@
 
 						<!-- post title -->
 						<h1>
-							<?php the_title(); ?>
+						<?php   // Get terms for post
+							$terms = get_the_terms( $post->ID , 'losplaatsen' );
+							// Loop over each item since it's an array
+							if ( $terms != null ){
+								foreach( $terms as $term ) {
+								// Print the name method from $term which is an OBJECT
+								print $term->name ;
+								// Get rid of the other data stored in the object, since it's not needed
+								unset($term);
+								} 
+							} 
+						?>
 						</h1>
 						<!-- /post title -->
 
@@ -41,15 +52,24 @@
 							<hr>
 							<time datetime="<?php the_time( 'Y-m-d' ); ?>">
 								<img src="<?php echo get_template_directory_uri(); ?>/img/icons/icon-calander.svg">	
-								plaatsdatum: <?php the_date(); ?>
+								<?php 
+									// get raw date
+									$date = get_field('stand_datum', false, false);
+									// make date object
+									$date = new DateTime($date);
+								?>
+								stand datum: 
+								<?php echo $date->format('d-m-Y'); ?>
 							</time>
 							<hr>
 						</span>
 						
 						<!-- /post details -->
+
 						<div class="wysiwyg-content">
 							<?php the_content(); // Dynamic Content. ?>
 						</div>
+
 						<?php edit_post_link(); // Always handy to have Edit Post Links available. ?>
 
 					</article>

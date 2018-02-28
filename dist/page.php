@@ -31,7 +31,7 @@
 							<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 								<div class="wysiwyg-content">
-								<?php the_content(); ?>
+									<?php the_content(); ?>
 								</div>
 
 								<br class="clear">
@@ -64,3 +64,4 @@
 	</div>
 
 <?php get_footer(); ?>
+

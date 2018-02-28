@@ -67,7 +67,7 @@ if ( function_exists( 'add_theme_support' ) ) {
 function html5blank_nav() {
     wp_nav_menu(
     array(
-        'theme_location'  => 'header-menu',
+        'theme_location'  => 'mobile-menu',
         'menu'            => '',
         'container'       => 'div',
         'container_class' => 'menu-{menu slug}-container',
@@ -86,6 +86,55 @@ function html5blank_nav() {
         )
     );
 }
+
+// HTML5 Blank navigation
+function html5blank_desktop_nav() {
+    wp_nav_menu(
+    array(
+        'theme_location'  => 'desktop-menu',
+        'menu'            => '',
+        'container'       => 'div',
+        'container_class' => 'menu-{menu slug}-container',
+        'container_id'    => '',
+        'menu_class'      => 'menu',
+        'menu_id'         => '',
+        'echo'            => true,
+        'fallback_cb'     => 'wp_page_menu',
+        'before'          => '',
+        'after'           => '',
+        'link_before'     => '',
+        'link_after'      => '',
+        'items_wrap'      => '<ul>%3$s</ul>',
+        'depth'           => 0,
+        'walker'          => '',
+        )
+    );
+}
+
+// HTML5 Blank navigation
+function html5blank_footer_nav() {
+    wp_nav_menu(
+    array(
+        'theme_location'  => 'footer-menu',
+        'menu'            => '',
+        'container'       => 'div',
+        'container_class' => 'menu-{menu slug}-container',
+        'container_id'    => '',
+        'menu_class'      => 'menu',
+        'menu_id'         => '',
+        'echo'            => true,
+        'fallback_cb'     => 'wp_page_menu',
+        'before'          => '',
+        'after'           => '',
+        'link_before'     => '',
+        'link_after'      => '',
+        'items_wrap'      => '<ul>%3$s</ul>',
+        'depth'           => 0,
+        'walker'          => '',
+        )
+    );
+}
+
 
 // Load HTML5 Blank scripts (header.php)
 function html5blank_header_scripts() {
@@ -156,7 +205,9 @@ function html5blank_styles() {
 // Register HTML5 Blank Navigation
 function register_html5_menu() {
     register_nav_menus( array( // Using array to specify more menus if needed
-        'header-menu'  => esc_html( 'Header Menu', 'html5blank' ), // Main Navigation
+        'mobile-menu'  => esc_html( 'Mobile Menu', 'html5blank' ), // Main Navigation
+        'desktop-menu'  => esc_html( 'Desktop Menu', 'html5blank' ), // Main Navigation
+        'footer-menu'  => esc_html( 'Footer Menu', 'html5blank' ), // Main Navigation
         'extra-menu'   => esc_html( 'Extra Menu', 'html5blank' ) // Extra Navigation if needed (duplicate as many as you need!)
     ) );
 }
@@ -368,6 +419,7 @@ add_action( 'get_header', 'enable_threaded_comments' ); // Enable Threaded Comme
 add_action( 'wp_enqueue_scripts', 'html5blank_styles' ); // Add Theme Stylesheet
 add_action( 'init', 'register_html5_menu' ); // Add HTML5 Blank Menu
 add_action( 'init', 'create_post_type_html5' ); // Add our HTML5 Blank Custom Post Type
+add_action( 'init', 'create_post_type_standen' ); // Add our HTML5 Blank Custom Post Type
 add_action( 'widgets_init', 'my_remove_recent_comments_style' ); // Remove inline Recent Comment Styles from wp_head()
 add_action( 'init', 'html5wp_pagination' ); // Add our HTML5 Pagination
 
@@ -476,8 +528,6 @@ function add_custom_taxonomies() {
 
 // Create 1 Custom Post type for a Demo, called HTML5-Blank
 function create_post_type_html5() {
-    register_taxonomy_for_object_type( 'category', 'uitslagen' ); // Register Taxonomies for Category
-    register_taxonomy_for_object_type( 'post_tag', 'uitslagen' );
     register_taxonomy_for_object_type( 'vlucht_type', 'uitslagen' );
     register_taxonomy_for_object_type( 'losplaatsen', 'uitslagen' );
     register_post_type( 'uitslagen', // Register Custom Post Type
@@ -509,13 +559,47 @@ function create_post_type_html5() {
         ), // Go to Dashboard Custom HTML5 Blank post for supports
         'can_export'   => true, // Allows export in Tools > Export
         'taxonomies'   => array(
-            'post_tag',
-            'category',
             'vlucht_typen',
             'losplaatsen'
         ) // Add Category and Post Tags support
     ) );
 }
+
+function create_post_type_standen() {
+    register_taxonomy_for_object_type( 'vlucht_type', 'standen' );
+    register_post_type( 'standen', // Register Custom Post Type
+        array(
+        'labels'       => array(
+            'name'               => esc_html( 'Standen', 'html5blank' ), // Rename these to suit
+            'singular_name'      => esc_html( 'Stand', 'html5blank' ),
+            'add_new'            => esc_html( 'Add New', 'html5blank' ),
+            'add_new_item'       => esc_html( 'Add New stand', 'html5blank' ),
+            'edit'               => esc_html( 'Edit', 'html5blank' ),
+            'edit_item'          => esc_html( 'Edit stand', 'html5blank' ),
+            'new_item'           => esc_html( 'New stand', 'html5blank' ),
+            'view'               => esc_html( 'View standen', 'html5blank' ),
+            'view_item'          => esc_html( 'View stand', 'html5blank' ),
+            'search_items'       => esc_html( 'Search standen', 'html5blank' ),
+            'not_found'          => esc_html( 'No stand found', 'html5blank' ),
+            'not_found_in_trash' => esc_html( 'No stand found in Trash', 'html5blank' ),
+        ),
+        'public'       => true,
+        'publicly_queryable' => true,
+        'query_var'          => true,
+        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+        'has_archive'  => false,
+        'supports'     => array(
+            'title',
+            'editor',
+            'excerpt',
+            'thumbnail'
+        ), // Go to Dashboard Custom HTML5 Blank post for supports
+        'can_export'   => true, // Allows export in Tools > Export
+        'taxonomies'   => array('vlucht_typen') // Add Category and Post Tags support
+    ) );
+}
+
+
 
 /*------------------------------------*\
     ShortCode Functions

@@ -32,34 +32,40 @@
 
 			<!-- header -->
 			<header class="header clear" role="banner">
+				<div class="container">
+					<div class="row justify-content-between">
+						<div class="col-md-4">
 
-
-			<div id="mobile-nav-button" class="mobile-nav-button">
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>
-					<!-- logo -->
-					<div class="logo">
-						<a href="<?php echo esc_url( home_url() ); ?>">
-							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-							<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/logo.png" alt="Logo" class="logo-img">
-						</a>
+							<div id="mobile-nav-button" class="mobile-nav-button">
+									<span></span>
+									<span></span>
+									<span></span>
+							</div>
+							<!-- logo -->
+							<div class="logo">
+								<a href="<?php echo esc_url( home_url() ); ?>">
+									<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
+									<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/logo.png" alt="Logo" class="logo-img">
+								</a>
+							</div>
+							<!-- /logo -->
+						</div>
+						<div class="col d-none d-md-inline-block align-self-center">
+							<!-- nav -->
+							<nav class="desktop-nav-container" role="navigation" >
+								<?php html5blank_desktop_nav(); ?>
+							</nav>
+							
+						</div>
 					</div>
-					<!-- /logo -->
-					<!-- nav -->
+				</div>
+				<!-- nav mobile -->
 
-					<!-- nav mobile -->
+				<nav class="mobile-nav-container" role="navigation" >
+					<?php html5blank_nav(); ?>
+				</nav>
 
-					<nav class="mobile-nav-container" role="navigation" >
-						<?php html5blank_nav(); ?>
-					</nav>
-
-			<!-- /nav mobile -->
-					<!-- /nav -->
-			
-
-
-					
+				<!-- /nav mobile -->
+				<!-- /nav -->		
 			</header>
 			<!-- /header -->

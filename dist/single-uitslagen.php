@@ -4,7 +4,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-offset-1 col-sm-12 col-xs-12">
-					<a href="/uitslagen"> <span>Uitslagen</span></a>
+					<a href="#" class="back-button"> <span>Uitslagen</span></a>
 				</div>
 			</div>
 		</div>
@@ -80,7 +80,9 @@
 						
 						<!-- /post details -->
 
-						<?php the_content(); // Dynamic Content. ?>
+						<<div class="wysiwyg-content">
+							<?php the_content(); // Dynamic Content. ?>
+						</div>
 
 						<?php edit_post_link(); // Always handy to have Edit Post Links available. ?>
 
