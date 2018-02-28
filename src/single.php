@@ -4,7 +4,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-offset-1 col-sm-12 col-xs-12">
-					<a href="/"> <span>Nieuws</span></a>
+					<a href="#" class="back-button"> <span>Nieuws</span></a>
 				</div>
 			</div>
 		</div>
