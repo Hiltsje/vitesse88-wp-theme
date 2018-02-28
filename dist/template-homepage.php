@@ -88,8 +88,8 @@
 	
 			<div class="order-2 order-sm-3 col-sm-6 col-xs-12">
 				<div class="homepage-block agenda-block">
-					<h2>Vluchtagenda</h2>
-					<p>Kijk in de vluchtagenda voor inkorf data, locaties en vluchtcodes.</p>
+					<h2>Vliegprogramma</h2>
+					<p>Kijk in het vliegprogramma voor inkorf data, locaties en vluchtcodes.</p>
 					<a class="link" href="/vluchtagenda">naar vluchtagenda</a>
 				</div>
 			</div>

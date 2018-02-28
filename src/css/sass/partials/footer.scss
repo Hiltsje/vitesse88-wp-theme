@@ -17,8 +17,18 @@
         font-size: 14px;
         color: $color_white;
     }
+    ul {
+        list-style: none;
+        padding: 0;
+    a {
+        font-size: 14px;
+        color: $color_white;
+    }
+}
 
     .button {
         display: block;
+       max-width: 176px;
     }
+    
 }

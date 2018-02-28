@@ -10,6 +10,7 @@
 
 		
 		$( ".back-button" ).click(function() {
+			event.preventDefault();
 			window.history.back();
 		  });
 

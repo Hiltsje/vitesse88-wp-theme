@@ -375,8 +375,15 @@ body {
   .footer p {
     font-size: 14px;
     color: #ffffff; }
+  .footer ul {
+    list-style: none;
+    padding: 0; }
+    .footer ul a {
+      font-size: 14px;
+      color: #ffffff; }
   .footer .button {
-    display: block; }
+    display: block;
+    max-width: 176px; }
 
 /**
  * partials/print
