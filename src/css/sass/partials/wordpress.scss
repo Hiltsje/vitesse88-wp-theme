@@ -24,18 +24,27 @@
 
   .alignright {
     float: right;
-    margin: $margin-vertical-base 0 $margin-vertical-large $margin-horizontal-large;
+    margin: $margin-vertical-base 0 16px 16px;
   }
 
   .alignleft {
     float: left;
-    margin: $margin-vertical-base $margin-horizontal-large $margin-vertical-large 0;
+    margin: $margin-vertical-base 16px 16px 0;
   }
 
 
   /**
   * Gallery & images
   */
+
+  img {
+    // width: auto;
+    max-width: 98.5%;
+    height: auto;
+    border: 0 none;
+
+    @include reset-box;
+  }
 
   .wp-caption {
     background: $body-bg;
@@ -61,4 +70,5 @@
     font-size: $font-size-base;
     line-height: $line-height-base;
   }
+
 }

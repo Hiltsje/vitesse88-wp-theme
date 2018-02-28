@@ -66,7 +66,9 @@
 						
 						<!-- /post details -->
 
-						<?php the_content(); // Dynamic Content. ?>
+						<div class="wysiwyg-content">
+							<?php the_content(); // Dynamic Content. ?>
+						</div>
 
 						<?php edit_post_link(); // Always handy to have Edit Post Links available. ?>
 

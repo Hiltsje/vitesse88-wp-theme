@@ -196,10 +196,16 @@ a.link {
     margin: 5px auto; }
   .wysiwyg-content .alignright {
     float: right;
-    margin: 5px 0 0 0; }
+    margin: 5px 0 16px 16px; }
   .wysiwyg-content .alignleft {
     float: left;
-    margin: 5px 0 0 0; }
+    margin: 5px 16px 16px 0; }
+  .wysiwyg-content img {
+    max-width: 98.5%;
+    height: auto;
+    border: 0 none;
+    padding: 0;
+    margin: 0; }
   .wysiwyg-content .wp-caption {
     background: #fff;
     border: thin solid #F0F0F0;
@@ -373,7 +379,8 @@ body {
  */
 .footer {
   background-color: #002F6C;
-  padding: 16px; }
+  padding: 16px;
+  margin: 48px 0 0 0; }
   .footer h4 {
     color: #ffffff;
     font-weight: 700; }
