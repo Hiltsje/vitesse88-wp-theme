@@ -528,8 +528,6 @@ function add_custom_taxonomies() {
 
 // Create 1 Custom Post type for a Demo, called HTML5-Blank
 function create_post_type_html5() {
-    register_taxonomy_for_object_type( 'category', 'uitslagen' ); // Register Taxonomies for Category
-    register_taxonomy_for_object_type( 'post_tag', 'uitslagen' );
     register_taxonomy_for_object_type( 'vlucht_type', 'uitslagen' );
     register_taxonomy_for_object_type( 'losplaatsen', 'uitslagen' );
     register_post_type( 'uitslagen', // Register Custom Post Type
@@ -561,8 +559,6 @@ function create_post_type_html5() {
         ), // Go to Dashboard Custom HTML5 Blank post for supports
         'can_export'   => true, // Allows export in Tools > Export
         'taxonomies'   => array(
-            'post_tag',
-            'category',
             'vlucht_typen',
             'losplaatsen'
         ) // Add Category and Post Tags support
