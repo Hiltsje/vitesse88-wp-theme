@@ -584,14 +584,13 @@ body {
     width: 100%; }
 
 .uitslagen-archive-page .uitslag-vlucht-type-container {
-  height: 100%; }
+  height: 100%;
+  padding-bottom: 40px; }
   .uitslagen-archive-page .uitslag-vlucht-type-container .uitslag-vlucht-type {
-    padding: 48px 0 16px 0;
+    padding: 16px 0 16px 0;
     font-weight: 700;
     font-size: 24px;
     color: #2B2B2B; }
-    .uitslagen-archive-page .uitslag-vlucht-type-container .uitslag-vlucht-type:first-of-type {
-      padding-top: 0; }
   .uitslagen-archive-page .uitslag-vlucht-type-container article a {
     background-image: url("img/icons/icon-chevron-right.svg");
     background-size: 8px;
@@ -614,7 +613,8 @@ body {
       .uitslagen-archive-page .uitslag-vlucht-type-container article a .date img {
         padding: 0 8px 0 1px; }
   .uitslagen-archive-page .uitslag-vlucht-type-container article .uitslagen-empty {
-    color: #D8D8D8; }
+    color: #9B9B9B;
+    font-size: 14px; }
   .uitslagen-archive-page .uitslag-vlucht-type-container .pagination {
     display: block;
     margin: 32px 0;

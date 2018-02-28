@@ -37,6 +37,36 @@
 			<!-- section -->
 			<section>
 			<div class="container">
+				<div class="row">
+					<div class='col uitslag-vlucht-type-container'>
+						<h3 class='uitslag-vlucht-type'>Generale stand</h3>
+						<?php 
+							// get standen per vlucht type		
+							query_posts(array( 
+								'post_type' => 'standen',
+								'showposts' => -1,
+								'meta_query' => array(
+									'relation'		=> 'AND',
+									array(
+										'key' => 'generale_stand',
+										'value' => '1',
+										'compare' => '==' // not really needed, this is the default
+									),
+									array(
+										'key'      => 'stand_datum',
+										'compare'  => 'REGEXP',
+										'value'    => '^' . $filter_year,
+									)
+								)
+								)
+							);
+							get_template_part( 'loop-standen' ); 
+							// done the foreach statement 
+
+							wp_reset_query();
+						?>
+					</div>
+				</div>
 			<div class="row">
 				<?php
 					// get all the categories from the database
@@ -52,7 +82,38 @@
 						<div class='col-xs-12 col-md-6 col-xl-4  uitslag-vlucht-type-container'>
 						<h3 class='uitslag-vlucht-type'>".$cat->name."</h3>";
 						
-						// create a custom wordpress query
+						// get standen per vlucht type
+						
+						query_posts(array( 
+							'post_type' => 'standen',
+							'showposts' => -1,
+	
+			
+							'tax_query' => array(
+								array(
+									'taxonomy' => 'vlucht_typen',
+									'terms' => $cat_id,
+									'field' => 'term_id',
+								)
+							),
+							'orderby' => 'meta_value',
+							'order' => 'ASC',
+							'meta_query' => array(
+								array(
+								'key'      => 'stand_datum',
+								'compare'  => 'REGEXP',
+								'value'    => '^' . $filter_year,
+								),    
+							)
+							)
+						);
+						get_template_part( 'loop-standen' ); 
+						 // done the foreach statement 
+
+						wp_reset_query();
+
+
+						// get uitslagen per vlucht type
 						
 						query_posts(array( 
 							'post_type' => 'uitslagen',
@@ -78,13 +139,12 @@
 							)
 						);
 						get_template_part( 'loop-uitslagen' ); 
-						get_template_part( 'pagination' );
 						echo "</div>";
 						} // done the foreach statement 
 				?>
 
 				</div>
-				</div>
+			</div>
 				
 			</section>
 			<!-- /section -->

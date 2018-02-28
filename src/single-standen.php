@@ -54,27 +54,13 @@
 								<img src="<?php echo get_template_directory_uri(); ?>/img/icons/icon-calander.svg">	
 								<?php 
 									// get raw date
-									$date = get_field('losdatum', false, false);
+									$date = get_field('stand_datum', false, false);
 									// make date object
 									$date = new DateTime($date);
 								?>
-								losdatum: 
+								stand datum: 
 								<?php echo $date->format('d-m-Y'); ?>
 							</time>
-							<span class="uitslagen-vlucht-type-tag">
-							<?php   // Get terms for post
-								$terms = get_the_terms( $post->ID , 'vlucht_typen' );
-								// Loop over each item since it's an array
-								if ( $terms != null ){
-									foreach( $terms as $term ) {
-									// Print the name method from $term which is an OBJECT
-									echo $term->name ;
-									// Get rid of the other data stored in the object, since it's not needed
-									unset($term);
-									} 
-								} 
-							?>
-							</span>
 							<hr>
 						</span>
 						

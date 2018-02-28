@@ -419,6 +419,7 @@ add_action( 'get_header', 'enable_threaded_comments' ); // Enable Threaded Comme
 add_action( 'wp_enqueue_scripts', 'html5blank_styles' ); // Add Theme Stylesheet
 add_action( 'init', 'register_html5_menu' ); // Add HTML5 Blank Menu
 add_action( 'init', 'create_post_type_html5' ); // Add our HTML5 Blank Custom Post Type
+add_action( 'init', 'create_post_type_standen' ); // Add our HTML5 Blank Custom Post Type
 add_action( 'widgets_init', 'my_remove_recent_comments_style' ); // Remove inline Recent Comment Styles from wp_head()
 add_action( 'init', 'html5wp_pagination' ); // Add our HTML5 Pagination
 
@@ -567,6 +568,42 @@ function create_post_type_html5() {
         ) // Add Category and Post Tags support
     ) );
 }
+
+function create_post_type_standen() {
+    register_taxonomy_for_object_type( 'vlucht_type', 'standen' );
+    register_post_type( 'standen', // Register Custom Post Type
+        array(
+        'labels'       => array(
+            'name'               => esc_html( 'Standen', 'html5blank' ), // Rename these to suit
+            'singular_name'      => esc_html( 'Stand', 'html5blank' ),
+            'add_new'            => esc_html( 'Add New', 'html5blank' ),
+            'add_new_item'       => esc_html( 'Add New stand', 'html5blank' ),
+            'edit'               => esc_html( 'Edit', 'html5blank' ),
+            'edit_item'          => esc_html( 'Edit stand', 'html5blank' ),
+            'new_item'           => esc_html( 'New stand', 'html5blank' ),
+            'view'               => esc_html( 'View standen', 'html5blank' ),
+            'view_item'          => esc_html( 'View stand', 'html5blank' ),
+            'search_items'       => esc_html( 'Search standen', 'html5blank' ),
+            'not_found'          => esc_html( 'No stand found', 'html5blank' ),
+            'not_found_in_trash' => esc_html( 'No stand found in Trash', 'html5blank' ),
+        ),
+        'public'       => true,
+        'publicly_queryable' => true,
+        'query_var'          => true,
+        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+        'has_archive'  => false,
+        'supports'     => array(
+            'title',
+            'editor',
+            'excerpt',
+            'thumbnail'
+        ), // Go to Dashboard Custom HTML5 Blank post for supports
+        'can_export'   => true, // Allows export in Tools > Export
+        'taxonomies'   => array('vlucht_typen') // Add Category and Post Tags support
+    ) );
+}
+
+
 
 /*------------------------------------*\
     ShortCode Functions
