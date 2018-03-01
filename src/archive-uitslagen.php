@@ -22,9 +22,12 @@
 						?>
 						<form action="/uitslagen" method="post">
 							<select name="year" onchange="this.form.submit()">
+								<option <?php if ($filter_year == '2013' ) echo 'selected' ; ?> value="2013">2013</option>
+								<option <?php if ($filter_year == '2014' ) echo 'selected' ; ?> value="2014">2014</option>
+								<option <?php if ($filter_year == '2015' ) echo 'selected' ; ?> value="2015">2015</option>
 								<option <?php if ($filter_year == '2016' ) echo 'selected' ; ?> value="2016">2016</option>
 								<option <?php if ($filter_year == '2017' ) echo 'selected' ; ?> value="2017">2017</option>
-								<option  <?php if ($filter_year == '2018' ) echo 'selected' ; ?> value="2018">2018</option>
+								<option <?php if ($filter_year == '2018' ) echo 'selected' ; ?> value="2018">2018</option>
 							</select>
 						</form>
 					</div>
