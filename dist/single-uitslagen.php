@@ -80,7 +80,7 @@
 						
 						<!-- /post details -->
 
-						<<div class="wysiwyg-content">
+						<div class="wysiwyg-content">
 							<?php the_content(); // Dynamic Content. ?>
 						</div>
 
