@@ -20,7 +20,6 @@
 								$filter_year = strval(date("Y"));
 							}
 						?>
-						<?php echo $filter_year?>
 						<form id="uitslagen-form" action="/uitslagen" method="post" >
 							<select name="year" onchange="this.form.submit()" autofocus>
 <!--								<option disabled selected >Selecteer jaar</option>-->
