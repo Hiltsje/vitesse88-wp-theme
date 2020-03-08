@@ -17,11 +17,14 @@
 						<?php $filter_year = $_POST['year']; ?>
 						<?php 
 							if (!isset($filter_year)) {
-								$filter_year = date("Y");
-							} 
+								$filter_year = strval(date("Y"));
+							}
 						?>
-						<form action="/uitslagen" method="post">
-							<select name="year" onchange="this.form.submit()">
+						<?php echo $filter_year?>
+						<form id="uitslagen-form" action="/uitslagen" method="post" >
+							<select name="year" onchange="this.form.submit()" autofocus>
+<!--								<option disabled selected >Selecteer jaar</option>-->
+								<option <?php if ($filter_year == '2020' ) echo 'selected' ; ?> value="2020">2020</option>
 								<option <?php if ($filter_year == '2019' ) echo 'selected' ; ?> value="2019">2019</option>
 								<option <?php if ($filter_year == '2018' ) echo 'selected' ; ?> value="2018">2018</option>
 								<option <?php if ($filter_year == '2017' ) echo 'selected' ; ?> value="2017">2017</option>
